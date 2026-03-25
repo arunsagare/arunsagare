@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meditation Journey Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Meditation Journey Tracker</h1>
+        <p>
+          Build self-awareness, track your meditation habit, and stay focused on
+          your goals.
+        </p>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Log today's meditation</h2>
+          <form id="meditation-form">
+            <label>
+              Date
+              <input type="date" id="session-date" required />
+            </label>
+            <label>
+              Minutes meditated
+              <input type="number" id="minutes" min="1" max="240" required />
+            </label>
+            <label>
+              Technique
+              <select id="technique" required>
+                <option value="Breath awareness">Breath awareness</option>
+                <option value="Body scan">Body scan</option>
+                <option value="Loving-kindness">Loving-kindness</option>
+                <option value="Open monitoring">Open monitoring</option>
+              </select>
+            </label>
+            <label>
+              Focus score (1-10)
+              <input type="number" id="focus-score" min="1" max="10" required />
+            </label>
+            <button type="submit">Save session</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Self-awareness thought journal</h2>
+          <form id="journal-form">
+            <label>
+              Date
+              <input type="date" id="journal-date" required />
+            </label>
+            <label>
+              What thought pattern did you notice today?
+              <textarea
+                id="thought-pattern"
+                rows="3"
+                placeholder="Example: I noticed self-doubt before starting deep work."
+                required
+              ></textarea>
+            </label>
+            <label>
+              Emotion intensity (1-10)
+              <input type="number" id="emotion-intensity" min="1" max="10" required />
+            </label>
+            <label>
+              How did you respond mindfully?
+              <textarea
+                id="mindful-response"
+                rows="3"
+                placeholder="Example: I paused, took 5 breaths, and returned to task."
+                required
+              ></textarea>
+            </label>
+            <button type="submit">Save journal entry</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Goal focus habit tracker</h2>
+          <form id="focus-form">
+            <label>
+              Date
+              <input type="date" id="focus-date" required />
+            </label>
+            <label>
+              Goal
+              <input id="goal-name" placeholder="Example: Ship my portfolio website" required />
+            </label>
+            <label>
+              Most important task today
+              <input id="task-name" placeholder="Example: Write homepage copy" required />
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="task-complete" />
+              Completed without distractions
+            </label>
+            <button type="submit">Save focus check-in</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="card stats">
+          <h2>Progress snapshot</h2>
+          <ul>
+            <li><strong id="total-sessions">0</strong> meditation sessions</li>
+            <li><strong id="total-minutes">0</strong> total minutes meditated</li>
+            <li><strong id="streak-days">0</strong> day streak</li>
+            <li><strong id="weekly-consistency">0%</strong> weekly consistency</li>
+            <li><strong id="avg-focus">0.0</strong> average focus score</li>
+            <li><strong id="mindful-responses">0</strong> mindful responses logged</li>
+            <li><strong id="goal-completion-rate">0%</strong> goal-task completion rate</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Personal improvement coach</h2>
+          <p id="coach-message">
+            Start by logging your first meditation session and journal reflection.
+          </p>
+          <ul id="coach-tips"></ul>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Deep focus timer</h2>
+          <label>
+            Focus duration (minutes)
+            <input type="number" id="timer-minutes" min="1" max="120" value="25" />
+          </label>
+          <p class="timer" id="timer-display">25:00</p>
+          <div class="timer-actions">
+            <button type="button" id="timer-start">Start</button>
+            <button type="button" id="timer-pause">Pause</button>
+            <button type="button" id="timer-reset">Reset</button>
+          </div>
+          <small id="timer-status">Use this before goal work to train deep focus.</small>
+        </article>
+
+        <article class="card">
+          <h2>Awareness prompt</h2>
+          <p id="awareness-prompt">
+            What repeated thought appeared today, and what need might be under it?
+          </p>
+          <button type="button" id="new-prompt">New prompt</button>
+          <h3>Milestones</h3>
+          <ul id="milestone-list"></ul>
+        </article>
+
+        <article class="card">
+          <h2>Data tools</h2>
+          <p>Export your progress, import it on another device, or reset all logs.</p>
+          <div class="data-actions">
+            <button type="button" id="export-data">Export JSON</button>
+            <label class="file-input-label">
+              Import JSON
+              <input type="file" id="import-data" accept="application/json" />
+            </label>
+            <button type="button" id="reset-data">Reset all data</button>
+          </div>
+          <small id="data-status"></small>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>Recent activity</h2>
+        <div class="activity-lists">
+          <div>
+            <h3>Meditation sessions</h3>
+            <ul id="session-list"></ul>
+          </div>
+          <div>
+            <h3>Journal entries</h3>
+            <ul id="journal-list"></ul>
+          </div>
+          <div>
+            <h3>Goal check-ins</h3>
+            <ul id="focus-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

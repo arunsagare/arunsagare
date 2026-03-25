@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Meditation Journey",
+    "slug": "meditation-journey",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.meditationjourney.app",
+      "versionCode": 1
+    }
+  }
+}
